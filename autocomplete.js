@@ -307,11 +307,11 @@
           }
           if (keyCode === 13 /* Enter */) {
               if (selected) {
+                  if (preventSubmit) {
+                      ev.preventDefault();
+                  }
                   settings.onSelect(selected, input);
                   clear();
-              }
-              if (preventSubmit) {
-                  ev.preventDefault();
               }
           }
       }
